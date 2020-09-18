@@ -1,4 +1,5 @@
 from django.db import models
+
 from companies.models import Company
 
 

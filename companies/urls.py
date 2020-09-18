@@ -1,4 +1,5 @@
 from django.urls import path
+
 from companies.views import CompanyView
 
 urlpatterns = [

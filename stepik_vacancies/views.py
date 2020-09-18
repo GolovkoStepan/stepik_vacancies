@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+
 from companies.models import Company
 from vacancies.models import Specialty
 
