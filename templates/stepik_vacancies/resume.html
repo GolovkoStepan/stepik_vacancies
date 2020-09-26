@@ -1,0 +1,24 @@
+{% extends 'stepik_vacancies/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="py-5"></div>
+                <div class="card p-2">
+                      <div class="card-body">
+                          <h3 class="mb-4">Мое резюме</h3>
+                          {% if request.user.resume %}
+                              {% load crispy_forms_tags %}
+                              {% crispy form form.helper %}
+                          {% else %}
+                              <p class="mb-4">У вас нет резюме. Хотите создать его?</p>
+                              <a href="my_resume?create=True" class="btn btn-primary">Создать резюме</a>
+                          {% endif %}
+                      </div>
+                </div>
+                <div class="py-5"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

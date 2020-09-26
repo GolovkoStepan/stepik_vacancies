@@ -17,8 +17,22 @@
           </li>
         </ul>
         <ul class="navbar-nav col-2 justify-content-end">
-          <li class="nav-item active">
-            <a href="#" class="nav-link font-weight-bold">Вход</a>
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ user.get_user_name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/profile">Профиль</a>
+                      <a class="dropdown-item" href="/my_resume">Резюме</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/logout">Выйти</a>
+                    </div>
+              </li>
+            {% else %}
+                <a href="/login" class="nav-link font-weight-bold">Вход</a>
+            {% endif %}
           </li>
         </ul>
       </div>
