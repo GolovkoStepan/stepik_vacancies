@@ -3,12 +3,13 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from companies.models import Company
+from stepik_vacancies.settings import MEDIA_SPECIALITY_IMAGE_DIR
 
 
 class Specialty(models.Model):
     code = models.CharField(max_length=100)
     name = models.CharField(max_length=200)
-    image = models.CharField(max_length=250)
+    image = models.ImageField(upload_to=MEDIA_SPECIALITY_IMAGE_DIR)
 
     def __str__(self):
         return self.name
