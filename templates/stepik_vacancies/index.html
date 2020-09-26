@@ -33,7 +33,7 @@
         {% for specialty in specialties %}
             <div class="col-6 col-md-6 col-lg-3">
               <div class="card pt-4 text-center mb-4">
-                <img class="mx-auto d-block" src="{{ specialty.image }}" width="100" height="60" alt="">
+                <img class="mx-auto d-block" src="{{ specialty.image.url }}" width="100" height="100" alt="">
                 <div class="card-body">
                   <p class="card-text mb-2">{{ specialty.name }}</p>
                   <p class="card-text"><a href="/vacancies/specialty/{{ specialty.code }}">{{ specialty.vacancies.all|length }}</a></p>
@@ -52,7 +52,7 @@
             <div class="col-6 col-md-6 col-lg-3">
               <div class="card pt-4 text-center mb-4">
                 <a href="#" style="max-width: 150px;" class="mx-auto d-block">
-                  <img class="mx-auto d-block mw-100" src="{{ company.logo }}" alt="">
+                  <img class="mx-auto d-block mw-100" src="{{ company.logo.url }}" alt="">
                 </a>
                 <div class="card-body">
                   <p class="card-text"><a href="/companies/{{ company.id }}">{{ company.vacancies.all|length }} вакансий</a></p>

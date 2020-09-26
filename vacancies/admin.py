@@ -1,3 +1,10 @@
-# from django.contrib import admin
+from django.contrib import admin
 
-# Register your models here.
+from vacancies.models import Specialty
+
+
+class SpecialtyAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Specialty, SpecialtyAdmin)
