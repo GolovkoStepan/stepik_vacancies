@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 
@@ -31,3 +32,16 @@ class VacancyView(View):
         }
 
         return render(request, 'vacancies/vacancy.html', context=context)
+
+
+class SearchView(View):
+    def get(self, request, *args, **kwargs):
+        q = request.GET.get('q') or ''
+        vacancies = Vacancy.objects.filter(Q(title__contains=q) | Q(description__contains=q))
+
+        context = {
+            "vacancies": vacancies,
+            'q': q
+        }
+
+        return render(request, 'vacancies/search.html', context=context)

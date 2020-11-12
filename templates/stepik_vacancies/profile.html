@@ -1,0 +1,14 @@
+{% extends 'stepik_vacancies/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <div class="py-5"></div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h3 class="mb-3">Ваш профиль</h3>
+                {% crispy form form.helper %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
